@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#090a0c">
+<title>Ed Gabriel Neri | Philclad Sign CDO</title>
+<style>
+:root{
+  --bg:#090a0c;
+  --card:#151618;
+  --card2:#1b1c1f;
+  --line:#303136;
+  --text:#f5f5f7;
+  --muted:#a7a7ad;
+  --blue:#0a84ff;
+  --purple:#76258f;
+}
+*{box-sizing:border-box}
+html{background:var(--bg)}
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--text);
+  font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","SF Pro Text",
+  "Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  -webkit-font-smoothing:antialiased;
+}
+.app{
+  width:100%;
+  max-width:560px;
+  min-height:100vh;
+  margin:auto;
+  padding:env(safe-area-inset-top) 18px calc(28px + env(safe-area-inset-bottom));
+}
+.top{
+  text-align:center;
+  padding:28px 0 22px;
+}
+.logo{
+  width:118px;height:118px;
+  border-radius:50%;
+  object-fit:cover;
+  display:block;
+  margin:0 auto 18px;
+  box-shadow:0 10px 35px rgba(118,37,143,.25);
+}
+.name{
+  font-size:32px;
+  line-height:1.1;
+  font-weight:700;
+  letter-spacing:-.8px;
+}
+.role{
+  margin-top:8px;
+  color:#c8c8cc;
+  font-size:17px;
+}
+.company{
+  margin-top:4px;
+  color:#d1d1d5;
+  font-size:17px;
+}
+.quick{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:10px;
+  margin:6px 0 18px;
+}
+.quick a{
+  min-height:92px;
+  padding:15px 6px 11px;
+  border-radius:17px;
+  background:var(--card);
+  border:1px solid #222327;
+  color:var(--blue);
+  text-decoration:none;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+}
+.quick .ico{
+  font-size:28px;
+  line-height:1;
+}
+.quick span:last-child{
+  font-size:14px;
+  font-weight:500;
+}
+.section{
+  background:var(--card);
+  border:1px solid #242529;
+  border-radius:20px;
+  overflow:hidden;
+  margin-bottom:16px;
+}
+.row{
+  min-height:83px;
+  display:flex;
+  align-items:center;
+  gap:14px;
+  padding:13px 16px;
+  text-decoration:none;
+  color:var(--text);
+  border-bottom:1px solid var(--line);
+}
+.row:last-child{border-bottom:0}
+.row:active,.save:active{background:#202125}
+.icon{
+  width:46px;height:46px;
+  flex:0 0 46px;
+  border-radius:50%;
+  display:grid;
+  place-items:center;
+  background:#292a2e;
+  color:var(--blue);
+  font-size:22px;
+}
+.row.facebook .icon{
+  background:var(--blue);
+  color:#fff;
+  font-weight:700;
+  font-size:25px;
+}
+.info{min-width:0;flex:1}
+.label{
+  color:var(--muted);
+  font-size:14px;
+  margin-bottom:3px;
+}
+.value{
+  font-size:17px;
+  line-height:1.3;
+  overflow-wrap:anywhere;
+}
+.chevron{
+  color:#85858a;
+  font-size:27px;
+  font-weight:300;
+}
+.save{
+  width:100%;
+  border:1px solid #242529;
+  border-radius:20px;
+  padding:17px 16px;
+  background:var(--card);
+  color:var(--text);
+  display:flex;
+  align-items:center;
+  gap:14px;
+  text-align:left;
+  cursor:pointer;
+  font-family:inherit;
+}
+.save .icon{
+  background:var(--blue);
+  color:#fff;
+  border-radius:12px;
+}
+.save-title{
+  font-size:18px;
+  font-weight:650;
+}
+.save-sub{
+  color:var(--muted);
+  font-size:14px;
+  margin-top:3px;
+}
+.footer{
+  margin-top:27px;
+  padding-top:20px;
+  border-top:1px solid #2b2c30;
+  text-align:center;
+  color:#8d8e94;
+  letter-spacing:4px;
+  font-size:11px;
+  line-height:2;
+}
+.footer strong{
+  color:#b7b7bc;
+  font-weight:500;
+}
+.toast{
+  position:fixed;
+  left:50%;
+  bottom:28px;
+  transform:translate(-50%,20px);
+  opacity:0;
+  pointer-events:none;
+  background:#f2f2f7;
+  color:#111;
+  padding:12px 17px;
+  border-radius:14px;
+  font-size:14px;
+  font-weight:600;
+  transition:.22s ease;
+  box-shadow:0 8px 30px #0008;
+}
+.toast.show{opacity:1;transform:translate(-50%,0)}
+@media(max-width:380px){
+  .name{font-size:28px}
+  .quick{gap:7px}
+  .quick a{min-height:86px}
+  .quick .ico{font-size:24px}
+  .quick span:last-child{font-size:13px}
+}
+</style>
+</head>
+<body>
+<main class="app">
+
+  <header class="top">
+    <img class="logo" src="philclad-logo.png" alt="Philclad">
+    <div class="name">Ed Gabriel Neri</div>
+    <div class="role">Sales / Marketing</div>
+    <div class="company">Philclad Sign CDO</div>
+  </header>
+
+  <nav class="quick" aria-label="Quick actions">
+    <a href="tel:+639665744851"><span class="ico">⌕</span><span>Call</span></a>
+    <a href="mailto:philcladprinting@gmail.com"><span class="ico">✉</span><span>Email</span></a>
+    <a href="https://maps.app.goo.gl/5poVz1M53StUC6jHA" target="_blank" rel="noopener"><span class="ico">●</span><span>Location</span></a>
+    <a href="https://www.facebook.com/PHILCLADADS" target="_blank" rel="noopener"><span class="ico">f</span><span>Facebook</span></a>
+  </nav>
+
+  <section class="section">
+    <a class="row" href="tel:+639665744851">
+      <div class="icon">⌕</div>
+      <div class="info"><div class="label">Phone</div><div class="value">0966-574-4851</div></div>
+      <div class="chevron">›</div>
+    </a>
+
+    <a class="row" href="mailto:philcladprinting@gmail.com">
+      <div class="icon">✉</div>
+      <div class="info"><div class="label">Email</div><div class="value">philcladprinting@gmail.com</div></div>
+      <div class="chevron">›</div>
+    </a>
+
+    <a class="row" href="https://maps.app.goo.gl/5poVz1M53StUC6jHA" target="_blank" rel="noopener">
+      <div class="icon">●</div>
+      <div class="info"><div class="label">Address</div><div class="value">Zone 3, Agusan,<br>Cagayan de Oro</div></div>
+      <div class="chevron">›</div>
+    </a>
+
+    <a class="row facebook" href="https://www.facebook.com/PHILCLADADS" target="_blank" rel="noopener">
+      <div class="icon">f</div>
+      <div class="info"><div class="label">Facebook</div><div class="value">Philclad Sign CDO</div></div>
+      <div class="chevron">›</div>
+    </a>
+  </section>
+
+  <button class="save" onclick="saveContact()">
+    <div class="icon">♙+</div>
+    <div class="info">
+      <div class="save-title">Save Contact</div>
+      <div class="save-sub">Add to your phone contacts</div>
+    </div>
+    <div class="chevron">›</div>
+  </button>
+
+  <footer class="footer">
+    <strong>PHILCLAD SIGN CDO</strong><br>
+    ADVERTISING · PRINTING · SIGNAGE
+  </footer>
+
+</main>
+
+<div class="toast" id="toast">Contact file ready</div>
+
+<script>
+function saveContact(){
+  const vcard = [
+    "BEGIN:VCARD",
+    "VERSION:3.0",
+    "N:Neri;Ed Gabriel;;;",
+    "FN:Ed Gabriel Neri",
+    "ORG:Philclad Sign CDO",
+    "TITLE:Sales/Marketing",
+    "TEL;TYPE=CELL:+639665744851",
+    "EMAIL;TYPE=INTERNET:philcladprinting@gmail.com",
+    "ADR;TYPE=WORK:;;See Google Maps location;Cagayan de Oro;;;Philippines",
+    "URL:https://www.facebook.com/PHILCLADADS",
+    "END:VCARD"
+  ].join("\r\n");
+
+  const blob = new Blob([vcard], {type:"text/vcard;charset=utf-8"});
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement("a");
+  a.href = url;
+  a.download = "Ed-Gabriel-Neri.vcf";
+  document.body.appendChild(a);
+  a.click();
+  a.remove();
+  setTimeout(()=>URL.revokeObjectURL(url),1000);
+
+  const toast=document.getElementById("toast");
+  toast.textContent="Contact file ready — add it to Contacts";
+  toast.classList.add("show");
+  setTimeout(()=>toast.classList.remove("show"),2600);
+}
+</script>
+</body>
+</html>
